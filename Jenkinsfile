@@ -13,7 +13,7 @@ node{
     }
     stage('Code Review'){
         try{
-            withMaven(maven:'Maven'){
+            withMaven(maven:'MyMaven'){
                 sh 'mvn pmd:pmd'
             }
         }finally{
@@ -31,7 +31,7 @@ node{
     }
     stage('Code Coverage'){
         try{
-            withMaven(maven:'Maven'){
+            withMaven(maven:'MyMaven'){
                 sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
             }
         }finally{
